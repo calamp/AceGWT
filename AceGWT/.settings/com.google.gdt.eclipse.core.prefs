@@ -1,4 +1,6 @@
-#Sat Mar 26 14:14:37 EDT 2011
+#Mon Mar 19 10:28:29 PDT 2012
 eclipse.preferences.version=1
-warSrcDir=war
-warSrcDirIsOutput=true
+jarsExcludedFromWebInfLib=
+lastWarOutDir=P\:/git/AceGWT/AceGWT/src/main/webapp
+warSrcDir=src/main/webapp
+warSrcDirIsOutput=false

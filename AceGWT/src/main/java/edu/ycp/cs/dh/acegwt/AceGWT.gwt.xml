@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module>
+<module rename-to='acegwt'>
   <inherits name='com.google.gwt.user.User'/>
+  
+  <inherits name='com.google.gwt.user.theme.standard.Standard'/>
   <!-- Specify the paths for translatable code                    -->
+  <entry-point class='edu.ycp.cs.dh.acegwt.client.ace.AceGWT' />
+  
   <source path='client'/>
-  <source path='shared'/>
+  <source path='public'/>
 </module>
-<!-- random comment as this file is apart of a mv test -->
+ 

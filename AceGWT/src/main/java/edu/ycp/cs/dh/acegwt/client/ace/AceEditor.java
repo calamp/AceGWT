@@ -317,7 +317,7 @@ public class AceEditor extends Composite implements RequiresResize {
 	/* (non-Javadoc)
 	 * @see com.google.gwt.user.client.ui.ResizeComposite#onResize()
 	 */
-	@Override
+	
 	public void onResize() {
 		redisplay();
 	}
