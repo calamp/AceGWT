@@ -71,24 +71,17 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <!-- Copy static web files before executing gwt:run -->
-            <plugin>
+             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.1.1</version>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>exploded</goal>
-                        </goals>
-                    </execution>
-                </executions>
                 <configuration>
                     <webappDirectory>${webappDirectory}</webappDirectory>
+                    <!-- ignore git files and external gwt builds e.g. produced by eclipse -->
+                    <warSourceExcludes>**/*.gitignore,acegwt/*</warSourceExcludes>
                 </configuration>
             </plugin>
+          
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -98,6 +91,7 @@
                     <target>1.6</target>
                 </configuration>
             </plugin>
+            
             <!-- Jar it up -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
