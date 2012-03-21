@@ -7,7 +7,7 @@
     <groupId>edu.ycp.cs.dh</groupId>
     <artifactId>acegwt</artifactId>
     <packaging>war</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>AceGWT</name>
 
     <properties>
@@ -71,17 +71,28 @@
                     </execution>
                 </executions>
             </plugin>
-             <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.1.1</version>
                 <configuration>
                     <webappDirectory>${webappDirectory}</webappDirectory>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/java</directory>
+                            <targetPath>WEB-INF/classes</targetPath>
+                            <includes>
+                                <inlcude>**/*.java</inlcude>
+                            </includes>
+                        </resource>
+                    </webResources>
                     <!-- ignore git files and external gwt builds e.g. produced by eclipse -->
                     <warSourceExcludes>**/*.gitignore,acegwt/*</warSourceExcludes>
+                    
+
                 </configuration>
             </plugin>
-          
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -91,7 +102,7 @@
                     <target>1.6</target>
                 </configuration>
             </plugin>
-            
+
             <!-- Jar it up -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -104,8 +115,8 @@
                             <goal>jar</goal>
                         </goals>
                         <configuration>
-
                             <includes>
+                                <include>**/edu/**/*.java</include>
                                 <include>**/edu/**/*.class</include>
                                 <include>**/edu/**/*.properties</include>
                                 <include>**/edu/**/*.js</include>
@@ -127,11 +138,11 @@
                         </goals>
                         <configuration>
                             <packaging>jar</packaging>
-                            <artifactId>${project.artifactId}</artifactId>
+                            <artifactId>${project.artifactId}-jar</artifactId>
                             <groupId>${project.groupId}</groupId>
                             <version>${project.version}</version>
                             <file>
-                                ${project.build.directory}/${project.artifactId}-${project.version}.jar
+                                ${project.build.directory}/${project.artifactId}-jar-${project.version}.jar
                             </file>
                         </configuration>
                     </execution>
