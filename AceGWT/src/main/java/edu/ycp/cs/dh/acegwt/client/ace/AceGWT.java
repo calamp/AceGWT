@@ -33,14 +33,14 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
-
+   
 public class AceGWT implements EntryPoint {
     /**
      * The message displayed to the user when the server cannot be reached or
      * returns an error.
      */
     private AceEditor editor1;
-    private AceEditor editor2;
+  //  private AceEditor editor2;
     private InlineLabel rowColLabel;
     /**
      * This is the entry point method.
@@ -52,9 +52,9 @@ public class AceGWT implements EntryPoint {
         editor1.setHeight("300px");
         
         // create second AceEditor widget
-        editor2 = new AceEditor(true);
-        editor2.setWidth("800px");
-        editor2.setHeight("300px");
+     //   editor2 = new AceEditor(true);
+     //   editor2.setWidth("800px");
+     //   editor2.setHeight("300px");
         
         // build the UI
         buildUI();
@@ -62,7 +62,7 @@ public class AceGWT implements EntryPoint {
         // start the first editor and set its theme and mode
         editor1.startEditor(); // must be called before calling setTheme/setMode/etc.
         editor1.setTheme(AceEditorTheme.ECLIPSE);
-        editor1.setMode(AceEditorMode.JAVA);
+        editor1.setMode(AceEditorMode.CLIDE);
         
         // use cursor position change events to keep a label updated
         // with the current row/col
@@ -75,12 +75,13 @@ public class AceGWT implements EntryPoint {
         updateEditor1CursorPosition(); // initial update
         
         // start the second editor and set its theme and mode
-        editor2.startEditor();
-        editor2.setTheme(AceEditorTheme.TWILIGHT);
-        editor2.setMode(AceEditorMode.PERL);
+      //  editor2.startEditor();
+      // editor2.setTheme(AceEditorTheme.TWILIGHT);
+      // editor2.setMode(AceEditorMode.XML);
 
         RootPanel.get("editor1").add(editor1);
-        RootPanel.get("editor2").add(editor2);
+     //   RootPanel.get("editor2").add(editor2);
+        
 
     }
     /**
@@ -199,7 +200,7 @@ public class AceGWT implements EntryPoint {
             
             mainPanel.add(buttonPanel);
             
-            mainPanel.add(editor2);
+        //    mainPanel.add(editor2);
             mainPanel.add(new Label("Label below!"));
             
             RootPanel.get().add(mainPanel);

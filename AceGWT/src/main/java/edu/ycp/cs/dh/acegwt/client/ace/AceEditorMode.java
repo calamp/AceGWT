@@ -83,7 +83,9 @@ public enum AceEditorMode {
 	/** Textile. */
 	TEXTILE("textile"),
 	/** XML. */
-	XML("xml");
+	XML("xml"),
+	/** CLIDE. */
+	CLIDE("clide");
 	
 	private final String name;
 	

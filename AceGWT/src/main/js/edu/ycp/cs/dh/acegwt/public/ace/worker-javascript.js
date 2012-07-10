@@ -121,6 +121,7 @@ var main;
 var sender;
 
 onmessage = function(e) {
+    
     var msg = e.data;
     if (msg.command) {
         main[msg.command].apply(main, msg.args);
@@ -1554,8 +1555,9 @@ var JavaScriptWorker = exports.JavaScriptWorker = function(sender) {
 oop.inherits(JavaScriptWorker, Mirror);
 
 (function() {
-    
+    console.log("+|Initializing ace/mode/javascript_worker");
     this.onUpdate = function() {
+        
         var value = this.doc.getValue();
         value = value.replace(/^#!.*\n/, "\n");
         
@@ -1577,7 +1579,7 @@ oop.inherits(JavaScriptWorker, Mirror);
             });
             return;
         } finally {
-//            console.log("parse time: " + (new Date() - start));
+        //    console.log("parse time: " + (new Date() - start));
         }
         
 //        var start = new Date();
@@ -1585,11 +1587,13 @@ oop.inherits(JavaScriptWorker, Mirror);
         lint(value, {undef: false, onevar: false, passfail: false});
         this.sender.emit("jslint", lint.errors);        
 //        console.log("lint time: " + (new Date() - start));
+        console.log("+|Initializing ace/mode/javascript_worker");
     }
     
 }).call(JavaScriptWorker.prototype);
 
-});define('ace/worker/mirror', ['require', 'exports', 'module' , 'ace/document', 'ace/lib/lang'], function(require, exports, module) {
+});
+define('ace/worker/mirror', ['require', 'exports', 'module' , 'ace/document', 'ace/lib/lang'], function(require, exports, module) {
 "use strict";
 
 var Document = require("../document").Document;

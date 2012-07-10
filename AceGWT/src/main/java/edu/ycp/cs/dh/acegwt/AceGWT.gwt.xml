@@ -26,8 +26,8 @@
   
   <inherits name='com.google.gwt.user.theme.standard.Standard'/>
   <!-- Specify the paths for translatable code                    -->
-  <entry-point class='edu.ycp.cs.dh.acegwt.client.ace.AceGWT' />
-  
+   <entry-point class='edu.ycp.cs.dh.acegwt.client.ace.AceGWT' />
+   
   <source path='client'/>
   <source path='public'/>
 </module>

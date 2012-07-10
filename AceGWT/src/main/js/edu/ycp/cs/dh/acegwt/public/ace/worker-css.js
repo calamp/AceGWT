@@ -1567,7 +1567,12 @@ oop.inherits(Worker, Mirror);
     
 }).call(Worker.prototype);
 
-});define('ace/worker/mirror', ['require', 'exports', 'module' , 'ace/document', 'ace/lib/lang'], function(require, exports, module) {
+});
+
+
+
+
+define('ace/worker/mirror', ['require', 'exports', 'module' , 'ace/document', 'ace/lib/lang'], function(require, exports, module) {
 "use strict";
 
 var Document = require("../document").Document;
